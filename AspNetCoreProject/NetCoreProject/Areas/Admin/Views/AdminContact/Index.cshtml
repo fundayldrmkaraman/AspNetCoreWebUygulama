@@ -1,0 +1,39 @@
+﻿@using EntityLayer.Concrete
+@model List<Contact>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<body>
+    <br />
+    <h3>İletişim</h3>
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            @foreach(var item in Model){
+            <div class="col-lg-3">
+                <div class="contact-box center-version">
+                    <a href="profile.html">
+                            <img alt="image" class="rounded-circle" src="~/inspinia-gh-pages/img/a6.jpg">
+                        <h3 class="m-b-xs"><strong>@item.ContactUserName</strong></h3>
+                        <div class="font-bold">@item.ContactMail</div>
+                        <address class="m-t-md">
+                            <strong>@item.ContactSubject</strong><br>
+                            @item.ContactMessage
+                        </address>
+                    </a>
+                    <div class="contact-box-footer">
+                            <a href="" class="btn btn-xs btn-white"><i class="fa fa-phone"></i> @item.ContactDate </a>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</body>
+
+</html>
+
+
